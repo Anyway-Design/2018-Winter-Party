@@ -74,7 +74,6 @@ main {
 .people div{
 	background-size: contain;
 }
-.hand{background-image: url(hand.png);}
 .eye{z-index: 3;}
 .hair{z-index: 4;}
 .mask{z-index: 5;}
@@ -378,12 +377,11 @@ main {
 }
 @keyframes ani-h {
 	0%{transform: none;}
-	/* 70%{filter: blur(1px);} */
 	99%{opacity: 1;}
 	100%{transform: translateY(-220%)scale(.6);opacity: 0;}
 }
 /* 别戳我 */
-..ani-9 .mask{
+.ani-9 .mask{
 	z-index: 99;
 	position: absolute;
 	background: #fff;
@@ -399,13 +397,13 @@ main {
 	transition: .1s ease-out;
 	display: none;
 }
-..ani-9:hover .mask,
-..ani-9:active .mask{
+.ani-9:hover .mask,
+.ani-9:active .mask{
 	transform: none;
 	opacity: 1;
 	display: block;
 }
-..ani-9 .mask::before{
+.ani-9 .mask::before{
 	content: "别戳我";
 	font-size: .5rem;
 	color: #4c4bfe;

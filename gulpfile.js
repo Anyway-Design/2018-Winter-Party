@@ -3,11 +3,7 @@ var gulp = require('gulp'), gulpLoadPlugins = require('gulp-load-plugins'), plug
 var cdnUrl = [
 	// [ 'assets/', 'https://s.anw.red/' ],
 	[	'assets/vue.js', 'https://s.anw.red/js/vue.min.js' ],
-	[	'assets/', 'https://s.anw.red/2018-party/' ]
-];
-
-var cssProcess = [
-	[	'/* animation: body-show .2s ease-out 9.6s both; */', 'animation: body-show .2s ease-out 9.6s both;' ]
+	[	'assets/', 'https://s.anw.red/2018-winter-party/' ]
 ];
 
 gulp.task('default', function() {
@@ -32,7 +28,6 @@ gulp.task('default', function() {
     .pipe(gulp.dest('builds'))
 
 	gulp.src('assets/*.css')
-		.pipe(plugins.batchReplace(cssProcess))
   	.pipe(plugins.cleanCss({compatibility: 'ie8'}))
     .pipe(gulp.dest('builds'));
 });

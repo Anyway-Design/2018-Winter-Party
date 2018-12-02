@@ -38,11 +38,11 @@ var g = new Vue({
         this.popupContent = "设计杂谈播客 Anyway.FM 的<span>北京线下活动</span>"
       }
       switch (a) {
-        case '1': this.popupContent += "，<em><strong>时间</strong>定于 9 月 22 日下午 2:00 - 6:00</em>"
+        case '1': this.popupContent += "，<em><strong>时间</strong>定于 12 月 22 日下午 2:00 - 6:00</em>"
           break
-        case '2': this.popupContent += "，<em><strong>地点</strong>在上海市徐家汇地铁站附近的「源咖啡」</em>"
+        case '2': this.popupContent += "，<em><strong>地点</strong>在望京的 8KM COFFEE</em>"
           break
-        case '3': this.popupContent += "，<em><strong>内容</strong>包括：主播们的「坦荡」分享 / 问答沙龙 / 吃蛋糕 / 到场嘉宾：ARK 创新咨询联合创始人滕磊</em>"
+        case '3': this.popupContent += "，<em><strong>内容</strong>包括：主播们的「抱团」分享 / 问答沙龙 / 新产品发布 / 到场嘉宾：请允许我吗按北京站惯例保持神秘~</em>"
           break
         default:
 
