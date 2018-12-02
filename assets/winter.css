@@ -1,0 +1,576 @@
+@charset "utf-8";
+*{
+	margin: 0;
+	padding: 0;
+	border: 0;
+	vertical-align: baseline;
+	outline: none;
+	text-align: center;
+	box-sizing: border-box;
+	-webkit-tap-highlight-color: transparent;
+}
+body {
+	background: #fff;
+	width: 100%;
+	font-family: 'Calluna Sans', sans-serif;
+	color: #333;
+	overflow: hidden;
+}
+@keyframes slowShow {
+	0% {opacity: 0}
+	100% {opacity: 1;}
+}
+img{
+	image-rendering: -webkit-optimize-contrast;
+}
+main {
+	width: 100vw;
+	background: #fff;
+	height: 100vh;
+}
+.content{
+	width: 100vw;
+	height: 110vh;
+	position: absolute;
+	left: 0;
+	top: -5vh;
+	animation: slowShow .2s cubic-bezier(1,0,.5,.5) .5s both
+}
+.content > .inner{
+	display: flex;
+	position: relative;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+}
+.wrapper{
+	width: 72px;
+	height: 99px;
+	display: block;
+	margin: 0;
+	vertical-align: middle;
+	border: none;
+}
+.line-breaker {
+  width: 100%;
+	height: 1px;
+}
+.wrapper > .inner{
+	position: relative;
+}
+.people{
+	height: 99px;
+	position: relative;
+	width: 72px;
+}
+.people img,
+.people div{
+	position: absolute;
+	width: 100%;
+	display: block;
+	height: 100%;
+	transition: all .15s ease-in-out;
+}
+.people div{
+	background-size: contain;
+}
+.hand{background-image: url(hand.png);}
+.eye{z-index: 3;}
+.hair{z-index: 4;}
+.mask{z-index: 5;}
+
+.body-0 .body{background-image: url(b0.png);}
+.body-1 .body{background-image: url(b1.png);}
+.body-2 .body{background-image: url(b2.png);}
+.body-3 .body{background-image: url(b3.png);}
+.body-4 .body{background-image: url(b4.png);}
+
+.head-0 .head{background-image: url(h0.png);}
+.head-1 .head{background-image: url(h1.png);}
+.head-2 .head{background-image: url(h2.png);}
+.head-3 .head{background-image: url(h3.png);}
+.head-4 .head{background-image: url(h4.png);}
+
+.head-0 .eye{background-image: url(e0.png);}
+.head-1 .eye{background-image: url(e1.png);}
+.head-2 .eye{background-image: url(e2.png);}
+.head-3 .eye{background-image: url(e3.png);}
+.head-4 .eye{background-image: url(e4.gif);}
+
+/* ~Eyes */
+.head-0 .eye{
+	animation: eye-0 2s ease-out infinite both;
+}
+@keyframes eye-0 {
+	0%{opacity: 1;}
+	5%{opacity: 0;}
+	10%{opacity: 1;}
+	15%{opacity: 0;}
+	20%{opacity: 1;}
+	25%{opacity: 0;}
+	30%{opacity: 1;}
+	100%{opacity: 1;}
+}
+.head-1 .eye{
+	animation: eye-1 3s ease-out infinite both;
+}
+@keyframes eye-1 {
+	0%{opacity: 0;}
+	9%{opacity: 0;}
+	10%{opacity: 1;}
+	30%{opacity: 1;}
+	31%{opacity: 0;}
+	100%{opacity: 0;}
+}
+.head-2 .eye{
+	animation: eye-2 2s ease-out infinite both;
+}
+.head-3 .eye{
+	animation: eye-0 3.2s ease-in .14s infinite both;
+}
+@keyframes eye-2 {
+	0%{transform: translateX(-4%);}
+	30%{transform: translateX(-4%);}
+	40%{transform: translateX(4%);}
+	60%{transform: translateX(4%);}
+	100%{transform: translateX(-4%);}
+}
+/* ~Animations */
+
+/* 人跳起来 */
+.ani-0:hover .people,
+.ani-0:active .people{
+	animation: ani-a .8s ease-out infinite;
+}
+.ani-0:hover .feet,
+.ani-0:active .feet{
+	animation: ani-a .8s ease-out .01s infinite;
+}
+@keyframes ani-a {
+	0%{transform: none;}
+	10%{transform: translateY(-1em);}
+	23%{transform: none;}
+	34%{transform: translateY(-1em);}
+	44%{transform: none;}
+}
+/* 头部平移 */
+.ani-1:hover .head,
+.ani-1:hover .eye,
+.ani-1:hover .hair,
+.ani-1:active .head,
+.ani-1:active .eye,
+.ani-1:active .hair{
+	animation: ani-b .4s ease-out infinite;
+}
+.ani-1:hover .hair,
+.ani-1:active .hair{
+	animation-delay: .01s;
+}
+@keyframes ani-b {
+	0%{transform: none;}
+	25%{transform: translateX(3%);}
+	50%{transform: none;}
+	75%{transform: translateX(-3%);}
+	100%{transform: none;}
+}
+/* 印度式点头 */
+.ani-2:hover .head,
+.ani-2:hover .eye,
+.ani-2:hover .hair,
+.ani-2:active .head,
+.ani-2:active .eye,
+.ani-2:active .hair{
+	animation: ani-c .4s ease-out infinite;
+}
+@keyframes ani-c {
+	0%{transform: none;}
+	25%{transform: rotate(3deg);}
+	50%{transform: none;}
+	75%{transform: rotate(-3deg);}
+	100%{transform: none;}
+}
+/* 人慢慢晃 */
+.ani-3{
+	/* background: #0f0; */
+	overflow: hidden;
+}
+.ani-3 .mask-outer{
+	background: #5353ff;
+	height: 1rem;
+	bottom: 0;
+	top: unset;
+	z-index: 0;
+	position: absolute;
+	width: 100%;
+	border-radius: 50%;
+	opacity: 0;
+}
+.ani-3:hover .mask-outer{
+	/* transform-origin: bottom; */
+	opacity: 1;
+	animation: 1s ani-hole ease-out both;
+}
+@keyframes ani-hole {
+	0%{transform: scaleX(0);}
+	16%{transform: scaleX(1);}
+	54%{transform: scaleX(1);}
+	80%{transform: scaleX(1)scaleY(1);}
+	100%{transform: scaleX(0)scaleY(0);}
+}
+.ani-3 .body,
+.ani-3 .people{
+	z-index: 3;
+}
+.ani-3:hover .people{
+	animation: .4s ani-drop .1s ease-in both;
+}
+@keyframes ani-drop {
+	0%{transform: translateY(0);}
+	20%{transform: translateY(-10%);}
+	100%{transform: translateY(100%);}
+}
+/* 点头 */
+.ani-4:hover .head,
+.ani-4:hover .eye,
+.ani-4:hover .hair,
+.ani-4:active .head,
+.ani-4:active .eye,
+.ani-4:active .hair{
+	animation: ani-d 1s ease-out infinite;
+}
+.ani-4:hover .hair,
+	.ani-4:active .hair{
+	animation-delay: .01s;
+}
+@keyframes ani-d {
+	0%{transform: none;}
+	5%{transform: translateY(2%);}
+	10%{transform: none;}
+	15%{transform: translateY(-2%);}
+	20%{transform: none;}
+	25%{transform: translateY(2%);}
+	30%{transform: none;}
+	35%{transform: translateY(-2%);}
+	40%{transform: none;}
+}
+/* 头发吹走 */
+.ani-5:hover .hair,
+.ani-5:active .hair{
+	animation: ani-e 2s ease-in-out both;
+	transform-origin: 50% 10%;
+	z-index: 999;
+}
+@keyframes ani-e {
+	0%{transform: none;}
+	100%{transform: translateX(-30rem) rotate(1turn);opacity: 0;}
+}
+.even .ani-5 .people{
+	transform: scaleX(-1);
+}
+/* 人消失 */
+.ani-6 .people{
+	overflow: hidden;
+}
+.ani-6 *{
+	transition: .15s ease-in-out;
+}
+.ani-6 .mask::before,
+.ani-6 .mask::after{
+	display: block;
+	content: "";
+	width: 50%;
+	top: 0;
+	height: 100%;
+	position: absolute;
+	background: #fff;
+	transition: none;
+	z-index: 19;
+}
+.ani-6:hover .mask::before,
+.ani-6:hover .mask::after,
+.ani-6:active .mask::before,
+.ani-6:active .mask::after{
+	z-index: 19;
+	transition: all .25s ease-in;
+}
+.ani-6 .mask::before{
+	left: -65%;
+	border-right: 2px solid #4646ff;
+}
+.ani-6:hover .mask::before,
+.ani-6:active .mask::before{
+	left: 0;
+}
+.ani-6 .mask::after{
+	right: -65%;
+	border-left: 2px solid #4646ff;
+}
+.ani-6:hover .mask::after,
+.ani-6:active .mask::after{
+	right: 0;
+}
+.ani-6:hover .people,
+.ani-6:hover .mask,
+.ani-6:active .people,
+.ani-6:active .mask{
+	transform: scaleY(0);
+	transition-delay: .5s;
+}
+.ani-6:hover .mask,
+.ani-6:active .mask{
+	transition-delay: .7s;
+}
+@keyframes ani-f {
+	0%{display: none;}
+	1%{background-image: url(m0.gif);display: block;}
+	99%{display: block;}
+	100%{display: none;background-image: url(m0.gif)}
+}
+/* 结冰 */
+.ani-7{
+	/* background: #00f; */
+}
+.ani-7:hover .people{
+	animation: ani-freeze 1.7s ease-in 1 both;
+	transform-origin: bottom;
+	transform: rotateX(90deg);
+}
+@keyframes ani-freeze {
+	0%{filter: none;transform: none;}
+	40%{filter:sepia(1) hue-rotate(160deg);}
+	80%{transform: none;}
+	98%{transform: rotateX(90deg);box-shadow: none;}
+	100%{border-top: #5252ff;filter:sepia(1) hue-rotate(160deg);}
+}
+/* 外星人抓走 */
+.ani-8{
+	/* background: #f5f5f5; */
+}
+.ani-8:hover .people,
+.ani-8:active .people{
+	animation: ani-h 1.2s cubic-bezier(.8,0,1,.5) .07s both;
+	z-index: 999;
+}
+.ani-8 .mask-outer::before{
+	content: "";
+	background: url(beam.png) no-repeat bottom center;
+	background-color:  rgba(255,255,255,.9) ;
+	background-size: contain;
+	opacity: 0;
+	transform: translateY(-1em)scaleX(0);
+	transition: .17s ease-out;
+	box-shadow: 0 0 1000px 100px #fff,
+	0 0 1000px 100px #fff;
+	z-index: 99;
+}
+.ani-8:hover .mask-outer::before,
+.ani-8:active .mask-outer::before{
+	position: absolute;
+	height: 900px;
+	width: 72px;
+	display: block;
+	top: -792px;
+	left: 0;
+	opacity: .9;
+	transform: translateY(0)scaleX(1);
+	pointer-events: none;
+	z-index: 99;
+}
+@keyframes ani-h {
+	0%{transform: none;}
+	/* 70%{filter: blur(1px);} */
+	99%{opacity: 1;}
+	100%{transform: translateY(-220%)scale(.6);opacity: 0;}
+}
+/* 别戳我 */
+..ani-9 .mask{
+	z-index: 99;
+	position: absolute;
+	background: #fff;
+	border: 2px solid #4c4bfe;
+	padding: .2em .5em;
+	width: 80%;
+	height: auto;
+	left: 10%;
+	top: 0%;
+	opacity: 0;
+	transform: translateY(20%);
+	pointer-events: none;
+	transition: .1s ease-out;
+	display: none;
+}
+..ani-9:hover .mask,
+..ani-9:active .mask{
+	transform: none;
+	opacity: 1;
+	display: block;
+}
+..ani-9 .mask::before{
+	content: "别戳我";
+	font-size: .5rem;
+	color: #4c4bfe;
+	line-height: 1;
+}
+ /* 中间挖空 */
+.removed{
+ /* background: #0f0; */
+	pointer-events: none;
+}
+.removed .people{
+	display: none;
+}
+.mid{
+	padding: 50px 40px 15px;
+	position: absolute;
+	/* background: rgba(255,0,0,.3); */
+	/* z-index: -1; */
+	opacity: 0;
+	animation: slowShow .2s cubic-bezier(1,0,.5,.5) .1s both
+}
+.mid img{
+	max-width: 100%;
+}
+.mid > .inner{
+	display: flex;
+	width: 100%;
+	height: 100%;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: flex-start;
+	font-size: .875rem;
+	color: #4c4afe;
+}
+.btn{
+	background: #ff2162;
+	padding: .2em .6em .2em .8em;
+	letter-spacing: .2em;
+	color: #fff;
+	font-weight: 700;
+	text-decoration: none;
+	z-index: 9999;
+	transition: all .1s ease-out;
+	display: block;
+	line-height: 1.75;
+	cursor: pointer;
+}
+.btn:hover{
+	background: #4c4afe;
+	animation: shake-it .15s ease-in-out infinite;
+}
+@keyframes shake-it {
+	0%{transform: translateY(-5%);}
+	25%{transform: none;}
+	75%{transform: translateY(5%);}
+	10%{transform: none;}
+}
+.btn:active{
+	transform: scale(.95);
+}
+.tagline{
+	width: 100%;
+	padding: 1em 0;
+	line-height: 1.65;
+}
+.tagline span{
+	display: inline-block;
+}
+.tagline em{
+	font-style: normal;
+	transition: all .1s ease-out;
+}
+.tagline em:last-of-type{
+	/* text-decoration: underline; */
+	/* background: #4c4afe;
+	color: #fff; */
+	border-bottom: 2px solid #ff2162;
+}
+.more-info{
+	list-style: none;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	width: 100%;
+}
+.more-info a{
+	font-size: .75rem;
+	margin: .3em 0;
+}
+.more-info-1{
+	background: #2092e8;
+}
+.more-info-2{
+	background: #00b309;
+}
+.more-info-3{
+	background: #e86813;
+}
+.more-info a:hover{
+	background: #5252ff;
+}
+.buy{
+	width: 100%;
+}
+.sep{
+	height: 3px;
+	/* background: url(tile.png) repeat; */
+	background: #4c4afe;
+	background-size: 50% 100%;
+	width: 100%;
+}
+.buy a{
+	margin: 0 auto;
+	font-size: 1rem;
+	display: inline-block;
+	border: 3px solid transparent;
+	border-left: none;
+	border-top: none;
+	border-image: url(tile.png)6 round;
+}
+.popup{
+	z-index: 999999;
+	position: absolute;
+	background: #fff;
+	border: 2px solid #4c4bfe;
+	padding: 1em;
+	top: 0;
+}
+/*~Small Reslotuion*/
+@media screen and (max-width: 1050px) {
+	.wrapper,
+	.people{
+		width: 64px;
+		height: 88px;
+	}
+	.mid{
+		padding: 25px 20px 30px;
+	}
+	.more-info{
+		justify-content: center;
+	}
+	.ani-8:hover .mask-outer::before{
+		height: 800px;
+		width: 64px;
+		top: -704px;
+	}
+}
+@media screen and (max-width: 900px) {
+	.wrapper,
+	.people{
+		width: 40px;
+		height: 55px;
+	}
+	.mid{
+		padding: 20px 20px 25px;
+	}
+	.mid > .inner{
+		font-size: .5rem;
+	}
+	.buy a{
+		border: none;
+	}
+	.ani-8:hover .mask-outer::before{
+		height: 500px;
+		width: 40px;
+		top: -440px;
+	}
+}

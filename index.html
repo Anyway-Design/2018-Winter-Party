@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<title>Anyway.FM 初冬抱团大会</title>
+	<meta name="description" content="设计杂谈播客 Anyway.FM 的 2018 年度北京线下活动" />
+	<meta name="author" content="JJ Ying" />
+
+	<link rel="stylesheet" href="assets/winter.css" />
+	<script src="assets/vue.js"></script>
+
+	<link rel="apple-touch-icon" href="https://s.anw.red/2018-party/large-icon.png">
+	<link rel="icon" href="assets/favicon.png">
+
+	<meta property="og:url" content="https://Anyway.FM/party">
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="Anyway.FM 初冬抱团大会">
+	<meta property="og:description" content="2018 年度 Anyway.FM 北京线下活动~">
+	<meta property="og:image" content="https://s.anw.red/2018-party/header.png">
+
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:description" content="2018 年度 Anyway.FM 北京线下活动~" />
+	<meta name="twitter:title" content="Anyway.FM 初冬抱团大会" />
+	<meta name="twitter:site" content="@anyway__fm" />
+	<meta name="twitter:image" content="https://s.anw.red/2018-party/header.png" />
+
+</head>
+<body>
+
+	<main id="party">
+		<div class="content" id="content">
+			<div class="inner">
+				<div class="mid" :style="{width: midWidth + 'px',height: midHeight + 'px',top: midY + 'px',left: midX + 'px'}">
+					<div class="inner">
+						<img class="logo" src="assets/logo.png" v-if="isLoaded">
+						<div class="tagline" v-html="popupContent">
+							设计杂谈播客 Anyway.FM 的<span>北京线下活动</span>
+						</div>
+						<ul class="more-info">
+							<li><a @click.stop="popUp('1')" class="btn more-info-1">活动时间 ↝</a></li>
+							<li><a @click="popUp('2')" class="btn more-info-2">活动地点 ↝</a></li>
+							<li><a @click="popUp('3')" class="btn more-info-3">活动内容 ↝</a></li>
+						</ul>
+
+						<div class="buy"><a href="https://wx.duohui.co/event/5543" target="_blank" class="btn">立即购票 ↝</a></div>
+
+					</div>
+				</div>
+				<template v-for="n in numbers">
+					<div class="wrapper" :id="'w'+n" :class="[isRemoved(n)]">
+						<div class="inner"  :class="['ani-'+randomNumber(9),'head-'+randomNumber(4),'body-'+randomNumber(4)]">
+
+							<div class="people">
+
+								<div class="body"></div>
+								<div class="head"></div>
+								<div class="eye"></div>
+								<img class="hair" :src="'assets/t'+randomNumber(12)+'.png'">
+								<div class="mask"></div>
+
+							</div>
+
+							<div class="mask-outer"></div>
+
+						</div>
+					</div>
+				</template>
+
+			</div>
+
+		</div>
+
+	</main>
+
+	<script src="assets/main.js"></script>
+	<!-- ~Baidu Analytics -->
+	<script>
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "https://hm.baidu.com/hm.js?d6fc362c05908e5ce8d17df52dbc2586";
+		  var s = document.getElementsByTagName("script")[0];
+		  s.parentNode.insertBefore(hm, s);
+		})();
+	</script>
+
+</body>
+</html>
