@@ -42,7 +42,7 @@ var g = new Vue({
           break
         case '2': this.popupContent += "，<em><strong>地点</strong>在望京的 8KM COFFEE</em>"
           break
-        case '3': this.popupContent += "，<em><strong>内容</strong>包括：主播们的「抱团」分享 / 问答沙龙 / 新产品发布 / 到场嘉宾：请允许我吗按北京站惯例保持神秘~</em>"
+        case '3': this.popupContent += "，<em><strong>内容</strong>包括：主播们的「抱团」分享 / 问答沙龙 / 新产品发布 / 到场嘉宾：请允许我们按北京站惯例保持神秘~</em>"
           break
         default:
 
